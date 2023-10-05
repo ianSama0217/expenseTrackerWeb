@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="./style/style.css" />
+  </head>
+  <body>
+    <div id="addJumpWindow">
+      <img src="./xmark-solid.svg" alt="closeBtn" id="addJumpWindowCloseBtn" />
+      <form>
+        <label for="text">Text</label>
+        <input id="inputText" type="text" name="text" />
+        <div class="radioBox">
+          <input type="radio" class="amountWay" name="pay" id="incomeCheck" />
+          <label for="income">Income</label>
+          <input type="radio" class="amountWay" name="pay" id="expenseCheck" />
+          <label for="expense">Expense</label>
+        </div>
+        <label for="amount">Amount</label>
+        <input id="inputAmount" type="number" name="amount" />
+        <button id="addAmount" type="button">Add transaction</button>
+      </form>
+    </div>
+
+    <div class="leftSide">
+      <h1>Expense Tracker</h1>
+      <h3>Kouhei</h3>
+      <div class="balanceBox">
+        <p>YOUR BALANCE</p>
+        <p id="balance">---</p>
+      </div>
+    </div>
+
+    <div class="main">
+      <div class="showValueBox">
+        <div class="incomeBox">
+          <p>INCOME</p>
+          <p id="income">---</p>
+        </div>
+        <div class="expenseBox">
+          <p>EXPENSE</p>
+          <p id="expense">---</p>
+        </div>
+      </div>
+
+      <button id="addPopUpWindow">Add transaction</button>
+
+      <div class="detailListArea" id="detailListArea">
+        <!-- <div class="detailListBox">
+          <p class="textValue">textValue</p>
+          rightSideBox只用於排版
+          <div class="rightSideBox">
+            <p class="amountValue">amountValue</p>
+            <button id="deletePopUpWindow">Delete</button>
+          </div>
+        </div> -->
+      </div>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

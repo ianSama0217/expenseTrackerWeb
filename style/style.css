@@ -1,0 +1,149 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-weight: normal;
+}
+
+#balance,
+#income,
+#expense {
+  margin-top: 0.25rem;
+  font-size: 2rem;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+}
+body #addJumpWindow {
+  display: none;
+  background-color: white;
+  border-radius: 8px;
+  padding: 2rem 2rem;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+body #addJumpWindow #addJumpWindowCloseBtn {
+  width: 2rem;
+  position: fixed;
+  top: 2%;
+  right: 2%;
+}
+body #addJumpWindow form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+body #addJumpWindow form label {
+  color: #3c7fa5;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+body #addJumpWindow form input {
+  height: 1.5rem;
+  width: 15rem;
+  border: 1px solid black;
+  border-radius: 8px;
+}
+body #addJumpWindow form .radioBox {
+  margin: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+}
+body #addJumpWindow form .radioBox input {
+  width: 2rem;
+}
+body #addJumpWindow form button {
+  background-color: #3c7fa5;
+  color: white;
+  font-size: 1rem;
+  width: 10rem;
+  align-self: center;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  margin-top: 2rem;
+}
+body .leftSide {
+  background-color: #3c7fa5;
+  color: white;
+  flex: 3 1 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding-left: 2rem;
+}
+body .leftSide h1 {
+  font-size: 2rem;
+  font-weight: lighter;
+}
+body .leftSide h3 {
+  font-size: 2rem;
+}
+body .leftSide .balanceBox p {
+  font-size: 1.6rem;
+}
+body .main {
+  flex: 7 1 650px;
+  display: flex;
+  flex-direction: column;
+  padding-left: 2rem;
+}
+body .main .showValueBox {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 4rem;
+}
+body .main .showValueBox .incomeBox {
+  font-size: 1.6rem;
+  color: #70a53c;
+}
+body .main .showValueBox .expenseBox {
+  font-size: 1.6rem;
+  color: #a53c42;
+}
+body .main button {
+  background-color: #3c7fa5;
+  color: white;
+  font-size: 1rem;
+  width: 10rem;
+  align-self: center;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  margin: 2rem 0;
+}
+body .main .detailListArea {
+  height: 55vh;
+  width: 35rem;
+  align-self: center;
+  overflow-y: scroll;
+}
+body .main .detailListArea .detailListBox {
+  width: 30rem;
+  border: 1px solid #3c7fa5;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  margin: 0 auto;
+  margin-top: 1rem;
+  border-radius: 8px;
+}
+body .main .detailListArea .detailListBox .textValue,
+body .main .detailListArea .detailListBox .amountValue {
+  color: #3c7fa5;
+  font-size: 1.35rem;
+  margin-right: 1rem;
+  margin-top: 0.3rem;
+}
+body .main .detailListArea .detailListBox .rightSideBox {
+  display: flex;
+}
+body .main .detailListArea .detailListBox .rightSideBox #deletePopUpWindow {
+  width: 6rem;
+  margin: 0;
+}/*# sourceMappingURL=style.css.map */
