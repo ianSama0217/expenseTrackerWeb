@@ -19,6 +19,14 @@ body {
   height: 100vh;
   display: flex;
 
+  #blackScreen {
+    display: none;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
   #addJumpWindow {
     display: none;
     background-color: white;
@@ -34,6 +42,13 @@ body {
       position: fixed;
       top: 2%;
       right: 2%;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+
+      &:hover {
+        border: 3px solid #777;
+        cursor: pointer;
+      }
     }
 
     form {
@@ -64,7 +79,7 @@ body {
         }
       }
 
-      button {
+      #addAmount {
         background-color: $themeColor;
         color: $fontColor;
         font-size: 1rem;
@@ -74,6 +89,13 @@ body {
         border: none;
         border-radius: 8px;
         margin-top: 2rem;
+        transition: all 0.5s ease;
+
+        &:hover {
+          background-color: #a6deff;
+          color: black;
+          cursor: pointer;
+        }
       }
     }
   }
@@ -136,14 +158,34 @@ body {
       border: none;
       border-radius: 8px;
       margin: 2rem 0;
+      transition: all 0.5s ease;
+
+      &:hover {
+        background-color: #a6deff;
+        color: black;
+        cursor: pointer;
+      }
     }
+
     .detailListArea {
       height: 55vh;
       width: 35rem;
       align-self: center;
       //   border: 1px solid red;
       overflow-y: scroll;
-      //有時間在修改scoller樣式
+
+      //編輯scoller樣式
+      &::-webkit-scrollbar {
+        width: 1rem;
+        background-color: $themeColor;
+        border-radius: 8px;
+      }
+
+      //編輯scoller滾動的那一塊東西
+      &::-webkit-scrollbar-thumb {
+        background-color: #5ac2ff;
+        border-radius: 8px;
+      }
 
       .detailListBox {
         width: 30rem;

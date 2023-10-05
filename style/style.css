@@ -16,6 +16,13 @@ body {
   height: 100vh;
   display: flex;
 }
+body #blackScreen {
+  display: none;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+}
 body #addJumpWindow {
   display: none;
   background-color: white;
@@ -31,6 +38,12 @@ body #addJumpWindow #addJumpWindowCloseBtn {
   position: fixed;
   top: 2%;
   right: 2%;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+body #addJumpWindow #addJumpWindowCloseBtn:hover {
+  border: 3px solid #777;
+  cursor: pointer;
 }
 body #addJumpWindow form {
   display: flex;
@@ -56,7 +69,7 @@ body #addJumpWindow form .radioBox {
 body #addJumpWindow form .radioBox input {
   width: 2rem;
 }
-body #addJumpWindow form button {
+body #addJumpWindow form #addAmount {
   background-color: #3c7fa5;
   color: white;
   font-size: 1rem;
@@ -66,6 +79,12 @@ body #addJumpWindow form button {
   border: none;
   border-radius: 8px;
   margin-top: 2rem;
+  transition: all 0.5s ease;
+}
+body #addJumpWindow form #addAmount:hover {
+  background-color: #a6deff;
+  color: black;
+  cursor: pointer;
 }
 body .leftSide {
   background-color: #3c7fa5;
@@ -116,12 +135,27 @@ body .main button {
   border: none;
   border-radius: 8px;
   margin: 2rem 0;
+  transition: all 0.5s ease;
+}
+body .main button:hover {
+  background-color: #a6deff;
+  color: black;
+  cursor: pointer;
 }
 body .main .detailListArea {
   height: 55vh;
   width: 35rem;
   align-self: center;
   overflow-y: scroll;
+}
+body .main .detailListArea::-webkit-scrollbar {
+  width: 1rem;
+  background-color: #3c7fa5;
+  border-radius: 8px;
+}
+body .main .detailListArea::-webkit-scrollbar-thumb {
+  background-color: #5ac2ff;
+  border-radius: 8px;
 }
 body .main .detailListArea .detailListBox {
   width: 30rem;

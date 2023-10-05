@@ -1,4 +1,3 @@
-const body = document.body;
 //視窗新增按鈕
 const addPopUpWindow = document.getElementById("addPopUpWindow");
 //新增彈跳視窗
@@ -10,17 +9,19 @@ const inputText = document.getElementById("inputText");
 const inputAmount = document.getElementById("inputAmount");
 const incomeCheck = document.getElementById("incomeCheck");
 const expenseCheck = document.getElementById("expenseCheck");
+//黑色背景
+const blackScreen = document.getElementById("blackScreen");
 
 //點擊主畫面add按鈕顯示彈跳視窗
 addPopUpWindow.addEventListener("click", () => {
   addJumpWindow.style.display = "block";
-  body.style.backgroundColor = "rgba(0,0,0,0.5)";
+  blackScreen.style.display = "block";
 });
 
 //點擊彈跳視窗關閉按鈕,關閉彈跳視窗
 addJumpWindowCloseBtn.addEventListener("click", () => {
   addJumpWindow.style.display = "none";
-  body.style.backgroundColor = "white";
+  blackScreen.style.display = "none";
 });
 
 //儲存textValue&amountValue到localstorage內
@@ -135,31 +136,37 @@ function compareProjectInfo(element1, element2) {
 const addAmount = document.getElementById("addAmount");
 
 addAmount.addEventListener("click", () => {
-  const text = inputText.value;
-  const amount = inputAmount.value;
+  const text = inputText.value.trim(); //trim()取得input的值，並除去空格
+  const amount = inputAmount.value.trim();
 
-  let color = null;
-  let className = null;
+  //處理使用者輸入問題(input內沒輸入值，不能按add按鈕)
+  if (text && amount && (incomeCheck.checked || expenseCheck.checked)) {
+    let color = null;
+    let className = null;
 
-  if (incomeCheck.checked) {
-    color = "#70A53C";
-    className = "greenText";
-  } else if (expenseCheck.checked) {
-    color = "#A53C42";
-    className = "redText";
+    if (incomeCheck.checked) {
+      color = "#70A53C";
+      className = "greenText";
+    } else if (expenseCheck.checked) {
+      color = "#A53C42";
+      className = "redText";
+    }
+
+    createList(text, amount, color, className);
+    saveValue();
+    printValue();
+
+    //印出消費總值
+    setIncome();
+    setExpense();
+    setBalance();
+
+    //創建完之後關閉彈跳視窗
+    addJumpWindow.style.display = "none";
+    blackScreen.style.display = "none";
+  } else {
+    alert("請輸入完整資料!");
   }
-  createList(text, amount, color, className);
-  saveValue();
-  printValue();
-
-  //印出消費總值
-  setIncome();
-  setExpense();
-  setBalance();
-
-  //創建完之後關閉彈跳視窗
-  // addJumpWindow.style.display = "none";
-  // body.style.backgroundColor = "white";
 });
 
 function saveValue() {
